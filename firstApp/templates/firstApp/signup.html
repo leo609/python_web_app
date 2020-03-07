@@ -1,0 +1,24 @@
+{% extends "firstapp/base.html" %}
+
+{% block main %}
+<form action="../new_user/" method="POST">
+    {% csrf_token %}
+
+    <label>FirstName:</label>
+    <input type="text" name="FirstName"/>
+    <br/>
+
+    <label>LastName:</label>
+    <input type="text" name="LastName"/>
+    <br/>
+
+    <label>Username:</label>
+    <input type="text" name="Username"/>
+    <br/>
+
+    <label>Password:</label>
+    <input type="password" name="Password"/>
+    <br/>
+
+    <button type="submit">save</button>
+{% endblock %}

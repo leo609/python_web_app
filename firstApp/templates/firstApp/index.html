@@ -1,0 +1,24 @@
+{% extends "firstapp/base.html" %}
+  {% block main %}
+    <a href="/firstApp/about/">Go to About </a><br>
+    <a href="/firstApp/coolWebsites">Go to coolWebsites </a><br>
+    <a href="/firstApp/form">Login </a><br>
+    <a href="/firstApp/signup">sign up </a><br>
+    <ol>
+      {% for person in persons %}
+      <li>{{person.firstName}}</li>
+      {% endfor%}
+    </ol>      
+    <form action="login/" method="POST">
+      {% csrf_token %}
+      <label>user_name:</label>
+      <input type="text" name="uname" />
+      <br/>
+
+      <label>password:</label>
+      <input type="password" name="pword" />
+      <br/>
+      <button type="submit">Submit</button>
+    </form>
+    
+  {%endblock %}

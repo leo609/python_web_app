@@ -1,0 +1,13 @@
+{% extends "firstapp/base.html" %}
+    {% block main %}
+    <a href="/firstApp/">Go to Home </a><br>
+    <a href="/firstApp/about">Go to about </a><br>
+    <a href="/firstApp/form">login </a><br>
+    <a href="/firstApp/signup">sign up </a><br>
+        <h3>cool websites</h3> 
+        <ol>
+            {% for each in websites_list %}
+                <li><a href = "{{each.1}}">{{each.0}}</a></li>
+            {% endfor %}
+        </ol>
+    {% endblock %}
